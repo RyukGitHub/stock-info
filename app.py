@@ -7,6 +7,10 @@ load_dotenv()
 
 app = FastAPI()
 
+@app.get("/")
+def root():
+    return {"message": "Stock Info API is running. Use /health or /generate-report."}
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
